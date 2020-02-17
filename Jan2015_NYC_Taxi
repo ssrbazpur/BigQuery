@@ -1,0 +1,9 @@
+#Getting 2015 January Trips
+
+WITH trips AS (
+  SELECT 
+      *, 
+      EXTRACT (MONTH from pickup_datetime) AS month,
+  FROM `bigquery-public-data.new_york.tlc_yellow_trips_2015`
+)
+ SELECT * FROM trips where month=1;
